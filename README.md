@@ -1,25 +1,33 @@
-Boilerplate for a new Nuxt project, including:
+## Ludum Dare 44
 
--   Automatic global registration for everything in the `~/components` directory
-    -   `~/components/MyComponent.vue` becomes `<my-component>`
-    -   `~/components/grouped/Component.vue` becomes `<grouped-component>`
--   A simplified `pages/index.vue`
--   All `.scss` vars/mixins/functions in `~/assets/scss` included globally using [style-resources](https://github.com/nuxt-community/style-resources-module) module
+Theme: Your Life is Currency
 
-## Recommended Workflow
+Pitch: You're the AI of a starship in a convoy that's just been ransacked by a police force. Make your way out of range of the thieves by collecting and converting the wreckage around you - and eventually, some of your own systems - into fuel for the journey.
 
-1. Install `degit` if you don't have it: `npm i -g degit`
-1. Use this bash script:
-    ```
-    nuxt() {
-        npx create-nuxt-app "$1"
-        cd "$1"
-        find . -name "README.md" -delete
-        rm ./components/Logo.vue
-        degit safrmo/nuxt-boilerplate -f
-        npm i node-sass sass-loader @nuxt/style-resources -D
-        npm i lodash
-        cd ..
-    }
-    ```
-1. Run `nuxt my-new-project-name` to run `create-nuxt-app`, remove extra Nuxt boilerplates, install this boilerplate, and add SASS and Lodash
+### Mechanics
+
+-   Movement: Moving implied by scrolling starfield. Debris comes into view as well. Inertia keeps you moving unless you actively change direction.
+-   Collecting: Come to a stop near an item to collect it. Need to stay still for X seconds to collect an item.
+-   Conversion: Use any collected or operational systems as fuel or ammo.
+-   ~~Combat: Fight off or run away from enemies that get too close.~~ (Cut for time.)
+-   Goal: Reach a given point and send word of the attack to your home base.
+
+### To Build
+
+-   Ship = collection of Segments:
+    -   Bridge
+    -   Databanks
+    -   Shields
+    -   Weapons
+    -   Cargo
+    -   Engines
+    -   Quarters
+    -   Sensors
+-   Debris
+    -   Same Segments as above, most broken but some intact
+    -   Debris placement (seed-based random?)
+-   UI
+    -   Segment value
+    -   Segment purpose
+    -   Goal direction
+    -   Collision warning
